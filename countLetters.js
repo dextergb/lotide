@@ -26,18 +26,20 @@ const countLetters = function(string) {
   const results = {};
   for (let letter of string) {
     if (letter !== " ") {
-      if (results[letter]) {
-        results[letter] += 1;
-      } else {
-        results[letter] = 1;
+      if (!results[letter]) {
+        results[letter] = 0;
+      //   results[letter] += 1;
+      // } else {
+      //   results[letter] = 1;
       }
+      results[letter] += 1;
     }
   }
   return results;
 };
 
 
-console.log(countLetters('lighthouse in the house'))
+console.log(countLetters('lighthouse in the house'));
 const result1 = countLetters("lighthouse in the house");
 assertEqual(result1["l"],1);
 assertEqual(result1["e"],3);
