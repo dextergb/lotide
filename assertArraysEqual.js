@@ -18,4 +18,3 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-assertArraysEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);

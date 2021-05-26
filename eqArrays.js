@@ -15,6 +15,3 @@ const eqArrays = function(firstArray, secondArray) {
   }
   return test;
 };
-
-// TEST CODE
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
