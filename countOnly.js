@@ -26,7 +26,7 @@ const countOnly = function(allItems, itemsToCount) {
   }
   // console.log('this is all results', results);
   return results; // returning new object
-}
+};
 
 const firstNames = [
   "Karl",
