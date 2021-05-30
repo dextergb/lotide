@@ -25,13 +25,8 @@ console.log(findKey({
 
 
 
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    console.log(`❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const { mainModule } = require('process');
+const assertEqual = require('./assertEqual')
 
 assertEqual(findKey({
   "Blue Hill": { stars: 1 },
@@ -41,4 +36,6 @@ assertEqual(findKey({
   "Ora":       { stars: 2 },
   "Akelarre":  { stars: 3 }
 }, x => x.stars === 2)); // => "noma"
+
+module.exports = findKey
 

@@ -1,19 +1,5 @@
-const eqArrays = function(firstArray, secondArray) {
-  for (let i = 0; i < firstArray.length; i++) {
-    if (firstArray[i] !== secondArray[i]) {
-      return false;
-    }
-  }
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const eqArrays = require('./eqArrays')
+const assertArraysEqual = require('./assertArraysEqual')
 
 const without = function (originalArray, removedItems) {
   let newArray = []; // creating empty array to push items into later
@@ -48,3 +34,5 @@ console.log(without(["1", "2", "3"], [1, 2, "3"]));
 //   }
 //   return newArray;
 // }
+
+module.exports = without;

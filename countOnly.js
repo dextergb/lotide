@@ -3,13 +3,7 @@
 // In order to decide what to count, will be given an idea of which items we care about and it will only count those, ignoring others.
 // Items in our case will be limited to Strings.
 
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-  } else if (actual !== expected) {
-    console.log(`❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual')
 
 const countOnly = function(allItems, itemsToCount) {
   const results = {};
@@ -64,3 +58,5 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
+
+module.exports = countOnly;
