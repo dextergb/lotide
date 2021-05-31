@@ -1,6 +1,13 @@
-const assertEqual = require('../assertEqual');
-const tail = require('../tail')
+const assert = require('chai').assert;
+const tail = require('../tail');
 
-console.log(assertEqual(tail([5,6,7]), 5));
-console.log(assertEqual(tail(["Hello", "Lighthouse", "Labs"]), "Hello"));
-console.log(assertEqual(tail([5,6,7]), [6,7]));
+describe('#tail', () => {
+  it('should return ["Lighthouse, "Labs"] when passed ["Hello", "Lighthouse", "Labs"]', () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]), ["Lighthouse", "Labs"]);
+  });
+
+  it('should return ["Lighthouse"] when passed ["Hello", "Lighthouse"]', () => {
+    assert.deepEqual(tail(["Hello", "Lighthouse"]), ["Lighthouse"]);
+  });
+
+});
